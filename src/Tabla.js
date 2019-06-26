@@ -15,20 +15,14 @@ const useStyles = makeStyles(theme => ({
   },
   table: {
     minWidth: 650
+  },
+  exact: {
+    color: "green"
+  },
+  wrong: {
+    color: "red"
   }
 }));
-
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9)
-];
 
 export default ({ data }) => {
   const classes = useStyles();
@@ -63,13 +57,49 @@ export default ({ data }) => {
                 <TableCell component="th" scope="row">
                   {x}
                 </TableCell>
-                <TableCell align="right">{fx}</TableCell>
-                <TableCell align="right">{derivada}</TableCell>
-                <TableCell align="right">{forward || "X"}</TableCell>
-                <TableCell align="right">{backward || "X"}</TableCell>
-                <TableCell align="right">{centrada || "X"}</TableCell>
-                <TableCell align="right">{derivadaSegunda}</TableCell>
-                <TableCell align="right">{segundaCentrada || "X"}</TableCell>
+                <TableCell align="right" className={classes.exact}>
+                  {fx}
+                </TableCell>
+                <TableCell align="right" className={classes.exact}>
+                  {derivada}
+                </TableCell>
+                <TableCell
+                  align="right"
+                  className={
+                    derivada === forward ? classes.exact : classes.wrong
+                  }
+                >
+                  {forward || "X"}
+                </TableCell>
+                <TableCell
+                  className={
+                    derivada === backward ? classes.exact : classes.wrong
+                  }
+                  align="right"
+                >
+                  {backward || "X"}
+                </TableCell>
+                <TableCell
+                  className={
+                    derivada === centrada ? classes.exact : classes.wrong
+                  }
+                  align="right"
+                >
+                  {centrada || "X"}
+                </TableCell>
+                <TableCell className={classes.exact} align="right">
+                  {derivadaSegunda}
+                </TableCell>
+                <TableCell
+                  className={
+                    derivadaSegunda === segundaCentrada
+                      ? classes.exact
+                      : classes.wrong
+                  }
+                  align="right"
+                >
+                  {segundaCentrada || "X"}
+                </TableCell>
               </TableRow>
             )
           )}
