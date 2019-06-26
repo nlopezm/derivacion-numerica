@@ -28,7 +28,7 @@ export default ({ data }) => {
   const classes = useStyles();
   return (
     <Paper className={classes.root}>
-      <Table className={classes.table}>
+      <Table className={classes.table} size={data.length > 7 && "small"}>
         <TableHead>
           <TableRow>
             <TableCell>x</TableCell>

@@ -78,7 +78,6 @@ class Form extends PureComponent {
                 type="number"
                 onChange={this.onChange}
                 margin="normal"
-                required
                 className={classes.textField}
                 required
                 value={n}
@@ -91,7 +90,6 @@ class Form extends PureComponent {
                 label="h"
                 onChange={this.onChange}
                 margin="normal"
-                required
                 value={h}
                 className={classes.textField}
                 required={!b}
