@@ -1,0 +1,13 @@
+service: derivacion-numerica
+
+provider:
+  name: aws
+  region: us-east-1
+
+plugins:
+  - serverless-finch
+
+custom:
+  client:
+    bucketName: ${self:service}
+    distributionFolder: build
