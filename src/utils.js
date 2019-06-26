@@ -11,7 +11,7 @@ export const getParser = formula => {
 export const derivadaHaciaAdelante = (formula, a, n, h) => {
   const parser = getParser(formula);
   const b = a + n * h;
-  // Arranco desde el k=n para no tener que calcular cada f k+1 dos veces
+  // Arranco desde k=n-1 para no tener que calcular cada f k+1 dos veces
   let values = [{ x: b, fx: undefined }];
   // f k+1 = f n-1+1 = f n = f(b) para el valor más alto de k
   let fk1 = parser.eval(`f(${b})`);
@@ -23,7 +23,7 @@ export const derivadaHaciaAdelante = (formula, a, n, h) => {
     });
     fk1 = fk;
   }
-  // Devuelvo el mismo array pero invertido, así queda ordenado de mayor a menor
+  // Devuelvo el mismo array pero invertido, así queda ordenado de menor a mayor
   // Invertir un array es más performante que ir agregando
   // todos los elementos en la posición 0 (unshift())
   return values.reverse();

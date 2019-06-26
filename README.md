@@ -1,68 +1,23 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Algoritmos
 
-## Available Scripts
+- Los algoritmos se encuentran en el archivo [src/utils.js](https://github.com/nlopezm/derivacion-numerica/blob/master/src/utils.js "src/utils.js").
+- Los algoritmos disponibles son: f(x) exacta, f'(x) exacta, f' hacia adelante, f' hacia atrás, f' centrada, f''(x) exacta y f'' centrada.
+  Todos ellos reciben como parámetro una fórmula `f(x)` y tres de los parámetros `a, n, h y b` (El otro se calcula automáticamente). Siendo n la cantidad de puntos y h la distancia entre cada punto de derivación.
+- Se graficará una tabla con los valores encontrados. Aquellos que dan exactos serán de color verde, mientras que en rojo estarán los valores que no den el resultado exacto.
+- Para evaluar las fórmulas, utilicé la librería [mathjs](https://mathjs.org/ "mathjs").
 
-In the project directory, you can run:
+## Demo
 
-### `npm start`
+Puede probarlo online desde cualquier dispositivo haciendo click en [este enlace](http://derivacion-numerica.s3-website-us-east-1.amazonaws.com "este enlace").
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Deploy
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+```bash
+yarn client deploy
+```
 
-### `npm test`
+## Cómo ejecutar
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Instalar Node y npm
+- En el directorio del proyecto, correr `npm start`
+- Abrir [http://localhost:3000](http://localhost:3000) para ver la aplicación en el navegador.
